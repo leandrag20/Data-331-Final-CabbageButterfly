@@ -109,17 +109,6 @@ colnames(territoryData2)[2] = "USA"
 barplot(territoryData2$Canada, col = "blue", main = 'Canada Data', xlab = 'Body Part', ylab = "Millimeters")
 barplot(territoryData2$USA, col = "blue", main = 'USA Data', xlab = 'Body Part', ylab = "Millimeters")
 
-monthData <- cabbageButterfly%>%
-  dplyr::group_by(dwc.month)%>%
-  dplyr::summarise(averageRightArea = mean(RBlackPatchApex), 
-                   averageLeftArea = mean(LBlackPatchApex),
-                   averageRightWidth = mean(RWingWidth), 
-                   averageLeftWidth = mean(LWingWidth),
-                   averageRightLength = mean(RWingLength), 
-                   averageLeftLength = mean(LWingLength),
-                   rightSpotAverage = mean(RAnteriorSpotM3),
-                   leftSpotAverageMale = mean(LAnteriorSpotM3))
-
 yearlyData <- cabbageButterfly%>%
   dplyr::group_by(YearUpdated)%>%
   dplyr::summarise(averageRightArea = mean(RBlackPatchApex), 
@@ -130,6 +119,15 @@ yearlyData <- cabbageButterfly%>%
                    averageLeftLength = mean(LWingLength),
                    rightSpotAverage = mean(RAnteriorSpotM3),
                    leftSpotAverageMale = mean(LAnteriorSpotM3))
+
+yearlyData2 <- data.frame(t(yearlyData[-1]))
+yearlyData2 <- yearlyData2[,-c(1, 3:122, 124)]
+colnames(yearlyData2)[1] = "1821"
+colnames(yearlyData2)[2] = "2017"
+
+barplot(yearlyData2$"1821", col = "blue", main = '1821 Data', xlab = 'Body Part', ylab = "Millimeters")
+barplot(yearlyData2$"2017", col = "blue", main = '2017 Data', xlab = 'Body Part', ylab = "Millimeters")
+
 
 decadeDataMale <- cabbageButterfly%>%
   dplyr::group_by(decade)%>%
