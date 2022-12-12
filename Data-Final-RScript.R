@@ -30,22 +30,40 @@ anteriorSpotDataMale <- cabbageButterfly%>%
   select(SexUpdated, LAnteriorSpotM3, RAnteriorSpotM3)%>%
   dplyr::filter(SexUpdated == 'male')%>%
   na.omit(anteriorSpotDataMale)%>%
-  summarise(rightSpotAverage = mean(LAnteriorSpotM3), leftSpotAverage = mean(RAnteriorSpotM3))
+  summarise(rightSpotAverageMale = mean(LAnteriorSpotM3), leftSpotAverageMale = mean(RAnteriorSpotM3))
 
 anteriorSpotDataFemale <- cabbageButterfly%>%
   select(SexUpdated, LAnteriorSpotM3, RAnteriorSpotM3)%>%
   dplyr::filter(SexUpdated == 'female')%>%
   na.omit(anteriorSpotDataFemale)%>%
-  summarise(rightSpotAverage = mean(LAnteriorSpotM3), leftSpotAverage = mean(RAnteriorSpotM3))
+  summarise(rightSpotAverageFemale = mean(LAnteriorSpotM3), leftSpotAverageFemale = mean(RAnteriorSpotM3))
 
+cabbageButterfly$decade <- substring(cabbageButterfly$dwc.year, first = 3, last = 3)
+cabbageButterfly$decade <- paste0(cabbageButterfly$decade, '0')
 
+na.omit(cabbageButterfly$RBlackPatchApex)
+na.omit(cabbageButterfly$LBlackPatchApex)
+na.omit(cabbageButterfly$RWingLength)
+na.omit(cabbageButterfly$RWingWidth)
+na.omit(cabbageButterfly$LWingLength)
+na.omit(cabbageButterfly$LWingWidth)
 
-
-
+cabbageButterfly$RBlackPatchApex <- as.numeric(cabbageButterfly$RBlackPatchApex)
+cabbageButterfly$LBlackPatchApex <- as.numeric(cabbageButterfly$LBlackPatchApex)
+cabbageButterfly$RWingLength <- as.numeric(cabbageButterfly$RWingLength)
+cabbageButterfly$RWingWidth <- as.numeric(cabbageButterfly$RWingWidth)
+cabbageButterfly$LWingLength <- as.numeric(cabbageButterfly$LWingLength)
+cabbageButterfly$LWingWidth <- as.numeric(cabbageButterfly$LWingWidth)
   
-  
+decadeData <- cabbageButterfly%>%
+  dplyr::group_by(decade)%>%
+  dplyr::summarise(averageRightArea = mean(RBlackPatchApex), 
+            averageLeftArea = mean(LBlackPatchApex),
+            averageRightWidth = mean(RWingWidth), 
+            averageLeftWidth = mean(LWingWidth),
+            averageRightLength = mean(RWingLength), 
+            averageLeftLength = mean(LWingLength))
 
 
-  
             
 
