@@ -57,6 +57,7 @@ cabbageButterfly$LWingWidth <- as.numeric(cabbageButterfly$LWingWidth)
   
 decadeData <- cabbageButterfly%>%
   dplyr::group_by(decade)%>%
+  filter(decade == "00" || decade == "90")%>%
   dplyr::summarise(averageRightArea = mean(RBlackPatchApex), 
             averageLeftArea = mean(LBlackPatchApex),
             averageRightWidth = mean(RWingWidth), 
