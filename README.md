@@ -1,8 +1,8 @@
 # Data-331-Final
 
-###Visuals
+### Visuals
 
-##Correlation
+## Correlation
 A visual to show the relationship and correlation between the anterior spot area and the apex area
 <img width="457" alt="Screen Shot 2022-12-12 at 5 32 28 PM" src="https://user-images.githubusercontent.com/113047041/207184697-08a8993d-b0ea-42e7-a76f-e26bfd36c352.png">
 
