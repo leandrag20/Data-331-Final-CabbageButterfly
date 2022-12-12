@@ -141,8 +141,8 @@ decadeDataMale2 <- data.frame(t(decadeDataMale[-1]))
 colnames(decadeDataMale2)[1] = "00"
 colnames(decadeDataMale2)[2] = "90"
 
-barplot(decadeDataMale2$`00`, col = "green", main = '00 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
-barplot(decadeDataMale2$`90`, col = "green", main = '90 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataMale2$`00`, col = "blue", main = '00 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataMale2$`90`, col = "blue", main = '90 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
 
 decadeDataFemale <- cabbageButterfly%>%
   dplyr::group_by(decade)%>%
@@ -157,8 +157,8 @@ decadeDataFemale2 <- decadeDataFemale2[,-c(2)]
 colnames(decadeDataFemale2)[1] = "00"
 colnames(decadeDataFemale2)[2] = "90"
 
-barplot(decadeDataFemale2$`00`, col = "green", main = '00 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
-barplot(decadeDataFemale2$`90`, col = "green", main = '90 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataFemale2$`00`, col = "pink", main = '00 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataFemale2$`90`, col = "pink", main = '90 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
 
 
 apexVsSpotArea <- cabbageButterfly%>%
