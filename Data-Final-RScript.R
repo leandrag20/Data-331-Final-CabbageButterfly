@@ -173,5 +173,25 @@ spotVsWingLength <- cabbageButterfly%>%
   select(LAnteriorSpotM3, RAnteriorSpotM3, RWingLength, LWingLength)%>%
   na.omit(spotVsWingLength)
   
+
+sexData <- cabbageButterfly%>%
+  dplyr::group_by(dwc.sex)%>%
+  filter(dwc.sex == "Male" || dwc.sex == "Female")%>%
+  dplyr::summarise(averageRightArea = mean(RBlackPatchApex), 
+                   averageLeftArea = mean(LBlackPatchApex),
+                   averageRightWidth = mean(RWingWidth), 
+                   averageLeftWidth = mean(LWingWidth),
+                   averageRightLength = mean(RWingLength), 
+                   averageLeftLength = mean(LWingLength),
+                   rightSpotAverage = mean(RAnteriorSpotM3),
+                   leftSpotAverageMale = mean(LAnteriorSpotM3))
+
+sexData2 <- data.frame(t(sexData[-1]))
+colnames(sexData2)[1] = "Female"
+colnames(sexData2)[2] = "Male"
+
+barplot(sexData2$`Female`, col = "pink", main = 'Sex Data Female', xlab = 'Body Part', ylab = "Millimeters")
+barplot(sexData2$`Male`, col = "blue", main = 'Sex Data Male', xlab = 'Body Part', ylab = "Millimeters")
+
             
 
