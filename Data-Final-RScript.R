@@ -14,7 +14,7 @@ cabbageButterfly <- read_excel("CompletePierisData_2022-03-09 (1).xlsx", .name_r
 cabbageButterfly <- cabbageButterfly %>%
   mutate(SexUpdated = recode(SexUpdated, M = "male", F = "female"))
 
-test <- cleanedLWA %>%
+cabbageButterflySexData <- cleanedLWA %>%
   group_by(sex) %>%
   summarise(averageRightArea = mean(RW.apex.A),
             averageLeftArea = mean(LW.apex.A),
@@ -37,6 +37,8 @@ anteriorSpotDataFemale <- cabbageButterfly%>%
   dplyr::filter(SexUpdated == 'female')%>%
   na.omit(anteriorSpotDataFemale)%>%
   summarise(rightSpotAverage = mean(LAnteriorSpotM3), leftSpotAverage = mean(RAnteriorSpotM3))
+
+
 
 
 
