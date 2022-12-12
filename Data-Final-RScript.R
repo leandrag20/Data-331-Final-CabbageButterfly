@@ -1,8 +1,13 @@
+install.packages("corrplot")
+install.packages("ggpubr")
+
 library(readxl)
 library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(tidyverse)
+library(corrplot)
+library(ggpubr)
 
 rm(list = ls())
 
@@ -165,14 +170,28 @@ apexVsSpotArea <- cabbageButterfly%>%
   select(LAnteriorSpotM3, RAnteriorSpotM3, RBlackPatchApex, LBlackPatchApex)%>%
   na.omit(apexVsSpotArea)
 
+cordata = apexVsSpotArea[,c(1,2,3,4)]
+corr <- round(cor(cordata), 1)
+corr
+corrplot(corr)
+
 apexVsWingLength <- cabbageButterfly%>%
   select(RBlackPatchApex, LBlackPatchApex, RWingLength, LWingLength)%>%
   na.omit(apexVsWingLength)
 
+cordata2 = apexVsWingLength[,c(1,2,3,4)]
+corr2 <- round(cor(cordata2), 1)
+corr2
+corrplot(corr2)
+
 spotVsWingLength <- cabbageButterfly%>%
   select(LAnteriorSpotM3, RAnteriorSpotM3, RWingLength, LWingLength)%>%
   na.omit(spotVsWingLength)
-  
+
+cordata3 = spotVsWingLength[,c(1,2,3,4)]
+corr3 <- round(cor(cordata3), 1)
+corr3
+corrplot(corr3)
 
 sexData <- cabbageButterfly%>%
   dplyr::group_by(dwc.sex)%>%
