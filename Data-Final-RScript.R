@@ -131,27 +131,41 @@ yearlyData <- cabbageButterfly%>%
                    rightSpotAverage = mean(RAnteriorSpotM3),
                    leftSpotAverageMale = mean(LAnteriorSpotM3))
 
-decadeData3 <- cabbageButterfly%>%
+decadeDataMale <- cabbageButterfly%>%
   dplyr::group_by(decade)%>%
-  filter(decade == "00" || decade == "90" || decade == "10")%>%
+  filter(decade == "00" || decade == "90" || decade == "10" && SexUpdated == 'male')%>%
   dplyr::summarise(averageRightWidth = mean(RWingWidth), 
                    averageLeftWidth = mean(LWingWidth),
                    averageRightLength = mean(RWingLength), 
                    averageLeftLength = mean(LWingLength))
 
-decadeData4 <- data.frame(t(decadeData3[-1]))
-colnames(decadeData4)[1] = "00"
-colnames(decadeData4)[2] = "10"
-colnames(decadeData4)[3] = "90"
+decadeDataMale2 <- data.frame(t(decadeDataMale[-1]))
+colnames(decadeDataMale2)[1] = "00"
+colnames(decadeDataMale2)[2] = "90"
 
-barplot(decadeData4$`00`, col = "green", main = '00 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
-barplot(decadeData4$`10`, col = "green", main = '10 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
-barplot(decadeData4$`90`, col = "green", main = '90 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataMale2$`00`, col = "green", main = '00 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataMale2$`90`, col = "green", main = '90 Decade Data Male', xlab = 'Body Part', ylab = "Millimeters")
+
+decadeDataFemale <- cabbageButterfly%>%
+  dplyr::group_by(decade)%>%
+  filter(decade == "00" || decade == "90" || decade == "10" && SexUpdated == 'female')%>%
+  dplyr::summarise(averageRightWidth = mean(RWingWidth), 
+                   averageLeftWidth = mean(LWingWidth),
+                   averageRightLength = mean(RWingLength), 
+                   averageLeftLength = mean(LWingLength))
+
+decadeDataFemale2 <- data.frame(t(decadeDataFemale[-1]))
+decadeDataFemale2 <- decadeDataFemale2[,-c(2)]
+colnames(decadeDataFemale2)[1] = "00"
+colnames(decadeDataFemale2)[2] = "90"
+
+barplot(decadeDataFemale2$`00`, col = "green", main = '00 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
+barplot(decadeDataFemale2$`90`, col = "green", main = '90 Decade Data Female', xlab = 'Body Part', ylab = "Millimeters")
 
 
 apexVsSpotArea <- cabbageButterfly%>%
   select(LAnteriorSpotM3, RAnteriorSpotM3, RBlackPatchApex, LBlackPatchApex)%>%
-  na.omit(anteriorSpotDataMale)
+  na.omit(apexVsSpotArea)
 
 apexVsWingLength <- cabbageButterfly%>%
   select(RBlackPatchApex, LBlackPatchApex, RWingLength, LWingLength)%>%
