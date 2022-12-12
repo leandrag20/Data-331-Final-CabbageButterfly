@@ -65,6 +65,17 @@ decadeData <- cabbageButterfly%>%
             averageRightLength = mean(RWingLength), 
             averageLeftLength = mean(LWingLength))
 
+decadeData2 <- data.frame(t(decadeData[-1]))
+colnames(decadeData2)[1] = "00"
+colnames(decadeData2)[2] = "90"
+
+
+cabbageButterflySexData2 <- data.frame(t(cabbageButterflySexData[-1]))
+colnames(cabbageButterflySexData2)[1] = "female"
+colnames(cabbageButterflySexData2)[2] = "male"
+cabbageButterflySexData2 <- cabbageButterflySexData2[,-c(3)]
+
+
 
             
 
