@@ -106,7 +106,7 @@ territoryData2 <- territoryData2[,-c(2,3, 5, 6, 7, 8)]
 colnames(territoryData2)[1] = "Canada"
 colnames(territoryData2)[2] = "USA"
 
-barplot(territoryData2$Canada, col = "blue", main = 'Canada Data', xlab = 'Body Part', ylab = "Millimeters")
+barplot(territoryData2$Canada, col = "red", main = 'Canada Data', xlab = 'Body Part', ylab = "Millimeters")
 barplot(territoryData2$USA, col = "blue", main = 'USA Data', xlab = 'Body Part', ylab = "Millimeters")
 
 yearlyData <- cabbageButterfly%>%
