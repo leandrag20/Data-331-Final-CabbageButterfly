@@ -147,5 +147,19 @@ colnames(decadeData4)[3] = "90"
 barplot(decadeData4$`00`, col = "green", main = '00 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
 barplot(decadeData4$`10`, col = "green", main = '10 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
 barplot(decadeData4$`90`, col = "green", main = '90 Decade Data', xlab = 'Body Part', ylab = "Millimeters")
+
+
+apexVsSpotArea <- cabbageButterfly%>%
+  select(LAnteriorSpotM3, RAnteriorSpotM3, RBlackPatchApex, LBlackPatchApex)%>%
+  na.omit(anteriorSpotDataMale)
+
+apexVsWingLength <- cabbageButterfly%>%
+  select(RBlackPatchApex, LBlackPatchApex, RWingLength, LWingLength)%>%
+  na.omit(apexVsWingLength)
+
+spotVsWingLength <- cabbageButterfly%>%
+  select(LAnteriorSpotM3, RAnteriorSpotM3, RWingLength, LWingLength)%>%
+  na.omit(spotVsWingLength)
+  
             
 
