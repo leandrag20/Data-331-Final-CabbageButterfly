@@ -104,7 +104,7 @@ territoryData <- cabbageButterfly%>%
                    averageRightLength = mean(RWingLength), 
                    averageLeftLength = mean(LWingLength),
                    rightSpotAverage = mean(RAnteriorSpotM3),
-                   leftSpotAverageMale = mean(LAnteriorSpotM3))
+                   leftSpotAverage = mean(LAnteriorSpotM3))
 
 territoryData2 <- data.frame(t(territoryData[-1]))
 territoryData2 <- territoryData2[,-c(2,3, 5, 6, 7, 8)]
@@ -123,7 +123,7 @@ yearlyData <- cabbageButterfly%>%
                    averageRightLength = mean(RWingLength), 
                    averageLeftLength = mean(LWingLength),
                    rightSpotAverage = mean(RAnteriorSpotM3),
-                   leftSpotAverageMale = mean(LAnteriorSpotM3))
+                   leftSpotAverage = mean(LAnteriorSpotM3))
 
 yearlyData2 <- data.frame(t(yearlyData[-1]))
 yearlyData2 <- yearlyData2[,-c(1, 3:122, 124)]
