@@ -78,7 +78,7 @@ decadeData <- cabbageButterfly%>%
             averageRightLength = mean(RWingLength), 
             averageLeftLength = mean(LWingLength),
             rightSpotAverage = mean(RAnteriorSpotM3),
-            leftSpotAverageMale = mean(LAnteriorSpotM3))
+            leftSpotAverage = mean(LAnteriorSpotM3))
 
 decadeData2 <- data.frame(t(decadeData[-1]))
 colnames(decadeData2)[1] = "00"
@@ -203,7 +203,7 @@ sexData <- cabbageButterfly%>%
                    averageRightLength = mean(RWingLength), 
                    averageLeftLength = mean(LWingLength),
                    rightSpotAverage = mean(RAnteriorSpotM3),
-                   leftSpotAverageMale = mean(LAnteriorSpotM3))
+                   leftSpotAverage = mean(LAnteriorSpotM3))
 
 sexData2 <- data.frame(t(sexData[-1]))
 colnames(sexData2)[1] = "Female"
