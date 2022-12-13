@@ -27,10 +27,12 @@ A visual to show the male wing length/height from 00's
 
 ### Yearly Data
 A visual to show the body part dimensions for 2017
+
 <img width="422" alt="Screen Shot 2022-12-12 at 4 38 32 PM" src="https://user-images.githubusercontent.com/113047041/207188565-963f88ba-3ad8-4462-a295-f5f21a33c7be.png">
 
 
 A visual to show the body part dimensions for 1821
+
 <img width="417" alt="Screen Shot 2022-12-12 at 4 38 09 PM" src="https://user-images.githubusercontent.com/113047041/207188813-cb997df8-9420-4eb6-934f-d6236325d63c.png">
 
 ### Country Data
