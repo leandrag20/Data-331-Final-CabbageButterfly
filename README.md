@@ -25,7 +25,7 @@ A visual to show the male wing length/height from 90's
 A visual to show the male wing length/height from 00's
 <img width="442" alt="Screen Shot 2022-12-12 at 4 50 08 PM" src="https://user-images.githubusercontent.com/113047041/207186922-1664487a-4846-4b12-8a4f-e9b14ba2c25b.png">
 
-### Yearly Data, with body part dimensions being larger in 4 in 1821 and also 4 in 2017
+### Yearly Data, with body part dimensions being larger in 4 in 1821 categories and also 4 categories in 2017
 A visual to show the body part dimensions for 2017
 
 <img width="422" alt="Screen Shot 2022-12-12 at 4 38 32 PM" src="https://user-images.githubusercontent.com/113047041/207188565-963f88ba-3ad8-4462-a295-f5f21a33c7be.png">
