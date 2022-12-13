@@ -47,6 +47,7 @@ A visual to show the body part dimensions for females
 <img width="437" alt="Screen Shot 2022-12-12 at 4 20 23 PM" src="https://user-images.githubusercontent.com/113047041/207189833-e3f68795-d80f-4b6a-b65f-8c16d9e5f547.png">
 
 A visual to show the body part dimensions for males
+
 <img width="428" alt="Screen Shot 2022-12-12 at 4 20 51 PM" src="https://user-images.githubusercontent.com/113047041/207190043-62caca22-1c81-4dce-b711-07763118cbea.png">
 
 
